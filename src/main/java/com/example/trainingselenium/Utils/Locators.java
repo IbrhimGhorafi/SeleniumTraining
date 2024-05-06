@@ -19,6 +19,16 @@ public class Locators {
     public static final String PRODUCT_INTEREST_OPTION_XPATH = SELECT_PRODUCT_INTEREST + "//option[text()='%s']";
     public static final String SELECT_COUNTRY_CURRENCY_SHOPPING = "//header//span[contains(text(),'Change')]";
     public static final String POPUP_MESSAGE_SUCCESS_OF_SUBSCRIBE = "//div[text()='Thank you for your subscription.']";
-    public static final String ICON_PERSON_IN_HEADER = "//header//img[contains(@id,'account-link')]";
-
+    public static final String ICON_PERSON_IN_HEADER = "//img[contains(@id,'account-link')]";
+    public static final String FORGET_PASSWORD_LINK = "//form//span[contains(text(),'Forgotten the password?')]";
+    public static final String EMAIL_RESET_PASSWORD_INPUT = "//div[contains(@class,'forgot-password-wrapper')]//input[contains(@name,'email')]";
+    public static final String RESET_PASSWORD_BUTTON = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Reset Password')]";
+    public static final String EMAIL_YOP_MAIL_INPUT = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Reset Password')]";
+    public static final String LOGIN_TO_YOP_MAIL_BUTTON = "//button[contains(@title,'Vérifier les mails @yopmail.com')]";
+    public static final String NAME_IFRAME_MESSAGE_CONTENT = "ifmail";
+    public static final String LINK_BUTTON_RESET_PASSWORD = "//div[@id='mail']//a[text()='Set a New Password']";
+    public static final String NEW_PASSWORD_INPUT = "//input[@name='password']";
+    public static final String REPEAT_PASSWORD_INPUT = "//input[@name='repeatPassword']";
+    public static final String SAVE_NEW_PASSWORD_BUTTON = "//button[@aria-label='Save New password']";
+    public static final String EMAIL_LOGIN_INPUT = "//div[contains(@class,'login-form')]//input[contains(@name,'email')]";
 }

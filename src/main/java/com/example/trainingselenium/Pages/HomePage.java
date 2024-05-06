@@ -93,7 +93,10 @@ public class HomePage {
 
     public void clickOnIconPersonButton() {
         wait.until(ExpectedConditions.elementToBeClickable(iconPerson)).click();
-
+       // wait.until(ExpectedConditions.elementToBeClickable(iconPerson));
+        //actions.moveToElement(iconPerson).click(iconPerson).perform();
+        //iconPerson.click();
+        //actions.scrollToElement(iconPerson).perform();
     }
 
     private void selectOption(WebElement field, String optionLocator, String value) {

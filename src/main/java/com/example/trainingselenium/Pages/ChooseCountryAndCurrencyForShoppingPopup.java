@@ -47,7 +47,9 @@ public class ChooseCountryAndCurrencyForShoppingPopup {
 
     public void enterCountryInput(String country) {
         wait.until(ExpectedConditions.visibilityOf(countryInput));
-        countryInput.sendKeys(country);
+        //countryInput.sendKeys(country);
+        actions.sendKeys(countryInput,country).build().perform();
+
     }
 
     public void selectCountry(String country) {

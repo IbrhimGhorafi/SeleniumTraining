@@ -11,6 +11,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -19,8 +20,8 @@ import java.util.Locale;
 
 
 @Slf4j
+@Getter
 public class SubscribeStepDefs {
-
 
     private WebDriver driver;
     private HomePage homePage;
@@ -31,13 +32,12 @@ public class SubscribeStepDefs {
      * In package Config You will find
      * Te configuration of sauce lab in WevDriverConfiguration
      * and in PageObjectInitialisation you will find the intailston of the class represnte the page object models
-     *Goals :
+     * Goals :
      */
     @Before
     public void setup() throws Exception {
-        WebDriverConfiguration webDriverConfiguration = new WebDriverConfiguration();
-        webDriverConfiguration.setup();
-        driver = webDriverConfiguration.getDriver();
+        driver = WebDriverConfiguration.getDriver();
+        log.info("Setup Driver"+driver);
         PageObjectInitialization pageObjectInitialization = new PageObjectInitialization(driver);
         homePage = pageObjectInitialization.getHomePage();
         chooseCountryAndCurrencyForShoppingPopup = pageObjectInitialization.getChooseCountryAndCurrencyForShoppingPopup();
@@ -46,14 +46,12 @@ public class SubscribeStepDefs {
 
     @Given("the user is on the Fortnums and Mason homepage")
     public void theUserIsOnTheFortnumsAndMasonHomepage() {
-        driver.get("https://www-preprod3.fortnums.net/");
         Locale locale = Locale.getDefault();
         String lang = locale.getDisplayLanguage();
         String country = locale.getDisplayCountry();
         log.info("Lang: {} Country: {}", lang, country);
         cookiesPopup.acceptAllCookies();
         homePage.changeDestination();
-        homePage.clickOnIconPersonButton();
     }
 
     @And("the user select the Non EU country switcher {} and {}")
@@ -116,8 +114,6 @@ public class SubscribeStepDefs {
      */
     @After
     public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
+        WebDriverConfiguration.quitDriver();
     }
 }

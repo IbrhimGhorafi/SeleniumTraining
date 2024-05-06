@@ -1,14 +1,10 @@
 package com.example.trainingselenium.Config;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,40 +13,29 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 public class WebDriverConfiguration {
-    private WebDriver driver;
 
-    public void setup() throws Exception {
-        log.info("Setting up WebDriver");
-        ChromeOptions browserOptions = getChromeOptions();
+    private static WebDriver driver;
 
-        URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");
-        driver = new RemoteWebDriver(url, browserOptions);
+    private WebDriverConfiguration() {}
 
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            log.warn("===============================================================");
+            log.info("Getting driver");
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
+        driver.get("https://www-preprod3.fortnums.net/");
 
-    public WebDriver getDriver() {
         return driver;
     }
 
-
-    public void tearDown() {
+    public static void quitDriver() {
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
-    }
-
-    private static ChromeOptions getChromeOptions() {
-        ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("Windows 10");
-        browserOptions.setBrowserVersion("124");
-        Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put("username", "oauth-ibrahim.ghorafi-5876c");
-        sauceOptions.put("accessKey", "a4b582b8-2a4b-4234-87f2-fe65fec55de0");
-        sauceOptions.put("build", "your_build_id");
-        sauceOptions.put("name", "fortnums_scenario_test");
-        browserOptions.setCapability("sauce:options", sauceOptions);
-        return browserOptions;
     }
 }
