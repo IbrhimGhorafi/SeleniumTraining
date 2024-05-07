@@ -16,7 +16,8 @@ public class WebDriverConfiguration {
 
     private static WebDriver driver;
 
-    private WebDriverConfiguration() {}
+    private WebDriverConfiguration() {
+    }
 
     public static WebDriver getDriver() {
         if (driver == null) {

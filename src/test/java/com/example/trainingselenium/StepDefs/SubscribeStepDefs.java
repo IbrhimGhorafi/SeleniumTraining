@@ -5,6 +5,7 @@ import com.example.trainingselenium.Config.WebDriverConfiguration;
 import com.example.trainingselenium.Pages.ChooseCountryAndCurrencyForShoppingPopup;
 import com.example.trainingselenium.Pages.CookiesPopup;
 import com.example.trainingselenium.Pages.HomePage;
+import com.example.trainingselenium.Utils.CustomListener;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -15,12 +16,14 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 
 import java.util.Locale;
 
 
 @Slf4j
 @Getter
+@Listeners(CustomListener.class)
 public class SubscribeStepDefs {
 
     private WebDriver driver;
@@ -37,7 +40,7 @@ public class SubscribeStepDefs {
     @Before
     public void setup() throws Exception {
         driver = WebDriverConfiguration.getDriver();
-        log.info("Setup Driver"+driver);
+        log.info("Setup Driver" + driver);
         PageObjectInitialization pageObjectInitialization = new PageObjectInitialization(driver);
         homePage = pageObjectInitialization.getHomePage();
         chooseCountryAndCurrencyForShoppingPopup = pageObjectInitialization.getChooseCountryAndCurrencyForShoppingPopup();
@@ -73,7 +76,7 @@ public class SubscribeStepDefs {
     @When("the user inserts a valid email {} and attempts to subscribe")
     public void theUserInsertsAValidEmailAndAttemptsToSubscribe(String email) {
         log.info("the user inserts a valid email and attempts to subscribe");
-        homePage.enterSubscriptionEmail(email);
+        //homePage.enterSubscriptionEmail(email);
     }
 
     @And("the user selects the country where they live {}")

@@ -17,7 +17,7 @@ import java.time.Duration;
 @Slf4j
 public class YopMailWebSite {
 
-    private WebDriver driver;
+    private static WebDriver driver;
     private FluentWait<WebDriver> wait;
     private Actions actions;
 
@@ -44,8 +44,10 @@ public class YopMailWebSite {
     }
 
     public void enterEmail(String email) {
-        wait.until(ExpectedConditions.elementToBeClickable(emailInput)).click();
-        actions.sendKeys(emailInput,email).build().perform();
+        log.info("Entering email address: " + email);
+        wait.until(ExpectedConditions.elementToBeClickable(emailInput));
+        actions.moveToElement(emailInput).click().perform();
+        actions.sendKeys(emailInput, email).build().perform();
     }
 
     public void clickLoginYopMailButton() {
@@ -65,7 +67,7 @@ public class YopMailWebSite {
     }
 
     public void navigateToResetPasswordPage() {
-        String linkOfResetPasswordPage=recuperateTheHrefOfResetPasswordPage();
+        String linkOfResetPasswordPage = recuperateTheHrefOfResetPasswordPage();
         driver.get(linkOfResetPasswordPage);
     }
 }

@@ -25,6 +25,9 @@ public class ResetPasswordPage {
     @FindBy(how = How.XPATH, using = Locators.SAVE_NEW_PASSWORD_BUTTON)
     private WebElement saveNewPasswordButton;
 
+    @FindBy(how = How.XPATH,using = Locators.MESSAGE_FOR_PASSWORD_CHANGED_SUCCESS)
+    private WebElement messageForPasswordChangedSuccess;
+
     public ResetPasswordPage(WebDriver driver) {
         this.driver = driver;
         wait = new FluentWait<>(driver)
@@ -46,5 +49,9 @@ public class ResetPasswordPage {
 
     public void clickSaveNewPasswordButton() {
         wait.until(ExpectedConditions.elementToBeClickable(saveNewPasswordButton)).click();
+    }
+
+    public String getMessageForPasswordChangedSuccess() {
+        return messageForPasswordChangedSuccess.getText();
     }
 }

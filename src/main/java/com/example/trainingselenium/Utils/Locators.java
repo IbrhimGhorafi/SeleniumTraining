@@ -23,7 +23,7 @@ public class Locators {
     public static final String FORGET_PASSWORD_LINK = "//form//span[contains(text(),'Forgotten the password?')]";
     public static final String EMAIL_RESET_PASSWORD_INPUT = "//div[contains(@class,'forgot-password-wrapper')]//input[contains(@name,'email')]";
     public static final String RESET_PASSWORD_BUTTON = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Reset Password')]";
-    public static final String EMAIL_YOP_MAIL_INPUT = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Reset Password')]";
+    public static final String EMAIL_YOP_MAIL_INPUT = "//input[contains(@name,'login')]";
     public static final String LOGIN_TO_YOP_MAIL_BUTTON = "//button[contains(@title,'Vérifier les mails @yopmail.com')]";
     public static final String NAME_IFRAME_MESSAGE_CONTENT = "ifmail";
     public static final String LINK_BUTTON_RESET_PASSWORD = "//div[@id='mail']//a[text()='Set a New Password']";
@@ -31,4 +31,11 @@ public class Locators {
     public static final String REPEAT_PASSWORD_INPUT = "//input[@name='repeatPassword']";
     public static final String SAVE_NEW_PASSWORD_BUTTON = "//button[@aria-label='Save New password']";
     public static final String EMAIL_LOGIN_INPUT = "//div[contains(@class,'login-form')]//input[contains(@name,'email')]";
+    public static final String PASSWORD_LOGIN_INPUT = "//div[contains(@class,'login-form')]//input[contains(@name,'password')]";
+    public static final String LOGIN_BUTTON = "//div[contains(@class,'login-form')]//button[contains(@aria-label,'Log in to your Account')]";
+    public static final String SUCCESS_LOGGED_MESSAGE_POPUP = "//div[contains(text(),'You are logged in!')]";
+    public static final String LINK_DETAILS_USER_PAGE = "//span[contains(@class,'account-menu-section')]//a[@href='/my-account']";
+    public static final String MESSAGE_RECEIVED_EMAIL_INSTRUCTION_RESET_PASSWORD = "//div[@class='forgot-password-wrapper']//p[contains(text(),'Check your inbox and follow the link')]";
+    public static final String BACK_TO_LOGIN_BUTTON = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Back to login')]";
+    public static final String MESSAGE_FOR_PASSWORD_CHANGED_SUCCESS = "//div[contains(text(),'Your password has been reset successfully!')]";
 }

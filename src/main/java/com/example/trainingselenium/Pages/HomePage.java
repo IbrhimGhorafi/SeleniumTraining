@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
@@ -43,6 +44,9 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, using = Locators.ICON_PERSON_IN_HEADER)
     private WebElement iconPerson;
+
+    @FindBy(how = How.XPATH, using = Locators.LINK_DETAILS_USER_PAGE)
+    private WebElement linkDetails;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -93,16 +97,19 @@ public class HomePage {
 
     public void clickOnIconPersonButton() {
         wait.until(ExpectedConditions.elementToBeClickable(iconPerson)).click();
-       // wait.until(ExpectedConditions.elementToBeClickable(iconPerson));
-        //actions.moveToElement(iconPerson).click(iconPerson).perform();
-        //iconPerson.click();
-        //actions.scrollToElement(iconPerson).perform();
     }
 
     private void selectOption(WebElement field, String optionLocator, String value) {
         actions.moveToElement(field).click().perform();
         WebElement option = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(String.format(optionLocator, value))));
         option.click();
+    }
+
+    public void navigateToDetailsPage() {
+        wait.until(ExpectedConditions.elementToBeClickable(iconPerson));
+        actions.moveToElement(iconPerson).perform();
+        wait.until(ExpectedConditions.elementToBeClickable(linkDetails));
+        actions.click(linkDetails).perform();
     }
 
 }
