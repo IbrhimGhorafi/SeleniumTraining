@@ -75,7 +75,7 @@ public class SubscribeStepDefs {
     @When("the user inserts a valid email {} and attempts to subscribe")
     public void theUserInsertsAValidEmailAndAttemptsToSubscribe(String email) {
         log.info("the user inserts a valid email and attempts to subscribe");
-        //homePage.enterSubscriptionEmail(email);
+        homePage.enterSubscriptionEmail(email);
     }
 
     @And("the user selects the country where they live {}")

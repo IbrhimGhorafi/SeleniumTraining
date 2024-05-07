@@ -13,4 +13,4 @@ Feature: Subscribe
     Then the user is successfully subscribed
     Examples:
       | country        | fortnumTopic | product                   | currency | email                        |
-      | United Kingdom | Restaurants  | Fortnum’s Tabletop Trivia | € EUR    | boijautrissas787@yopmail.com |
+      | United Kingdom | Restaurants  | Fortnum’s Tabletop Trivia | € EUR    | boijautrissas887@yopmail.com |
