@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
 import org.testng.asserts.Assertion;
 
-@Listeners(CustomListener.class)
+
 public class ResetPasswordStepDefs {
     private WebDriver driver;
     private HomePage homePage;

@@ -17,7 +17,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
 
 @Slf4j
-@Listeners(CustomListener.class)
 public class LoginStepDefs {
     private WebDriver driver;
     private HomePage homePage;

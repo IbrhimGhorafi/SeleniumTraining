@@ -23,7 +23,6 @@ import java.util.Locale;
 
 @Slf4j
 @Getter
-@Listeners(CustomListener.class)
 public class SubscribeStepDefs {
 
     private WebDriver driver;
