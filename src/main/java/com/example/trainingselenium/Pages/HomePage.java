@@ -131,15 +131,25 @@ public class HomePage {
 
     public void enterSearchInput(String valueOnSearch) {
         wait.until(ExpectedConditions.elementToBeClickable(searchInput));
-        actions.moveToElement(searchInput).click().sendKeys(searchInput, valueOnSearch).perform();
+        actions.moveToElement(searchInput).click().perform();
+        actions.sendKeys(searchInput, valueOnSearch).perform();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void clickOnSearchButton() {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-        actions.moveToElement(searchButton).click().perform();
+        actions.click(searchButton).perform();
     }
 
     public String getSearchResultText() {
+        wait.until(ExpectedConditions.visibilityOf(searchResultText));
+        actions.moveToElement(searchResultText).perform();
+
+        log.info("Class.HomePage.Methode.getSearchResultText() " + searchResultText.getText());
         return searchResultText.getText();
     }
 }
