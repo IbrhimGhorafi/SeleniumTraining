@@ -1,6 +1,6 @@
 Feature: Subscribe
 
-  @Subs
+  @Subscribe
   Scenario Outline: Subscribe with valid email from sign-up bloc
     Given the user is on the Fortnums and Mason homepage
     And the user select the Non EU country switcher <country> and <currency>

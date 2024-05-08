@@ -38,4 +38,8 @@ public class Locators {
     public static final String MESSAGE_RECEIVED_EMAIL_INSTRUCTION_RESET_PASSWORD = "//div[@class='forgot-password-wrapper']//p[contains(text(),'Check your inbox and follow the link')]";
     public static final String BACK_TO_LOGIN_BUTTON = "//div[contains(@class,'forgot-password-wrapper')]//button[contains(@aria-label,'Back to login')]";
     public static final String MESSAGE_FOR_PASSWORD_CHANGED_SUCCESS = "//div[contains(text(),'Your password has been reset successfully!')]";
+    public static final String ICON_SEARCH_IN_HEADER = "//div[contains(@class,'header-menu')]//i[contains(@class,'icon-search')]";
+    public static final String SEARCH_INPUT = "//div[contains(@class,'searchbox')]//input[contains(@placeholder,'Search')]";
+    public static final String SEARCH_BUTTON = "//div[contains(@class,'searchbox')]//button[contains(@class,'search')]";
+    public static final String SEARCH_RESULT_TEXT = "//div[contains(@class,'toolbar-tabs ')]//div[contains(text(),'results')]//span";
 }

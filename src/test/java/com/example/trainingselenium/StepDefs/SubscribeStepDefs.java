@@ -5,7 +5,6 @@ import com.example.trainingselenium.Config.WebDriverConfiguration;
 import com.example.trainingselenium.Pages.ChooseCountryAndCurrencyForShoppingPopup;
 import com.example.trainingselenium.Pages.CookiesPopup;
 import com.example.trainingselenium.Pages.HomePage;
-import com.example.trainingselenium.Utils.CustomListener;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -16,7 +15,6 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Listeners;
 
 import java.util.Locale;
 

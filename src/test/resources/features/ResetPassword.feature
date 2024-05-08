@@ -1,6 +1,6 @@
 Feature: Reset Password
 
-  @Reset
+  @ResetPassword
   Scenario Outline: Reset password
     Given the user is on the Fortnums and Mason homepage
     And the user select the Non EU country switcher <country> and <currency>

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
@@ -47,6 +46,18 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, using = Locators.LINK_DETAILS_USER_PAGE)
     private WebElement linkDetails;
+
+    @FindBy(how = How.XPATH, using = Locators.ICON_SEARCH_IN_HEADER)
+    private WebElement iconSearch;
+
+    @FindBy(how = How.XPATH, using = Locators.SEARCH_INPUT)
+    private WebElement searchInput;
+
+    @FindBy(how = How.XPATH, using = Locators.SEARCH_BUTTON)
+    private WebElement searchButton;
+
+    @FindBy(how = How.XPATH, using = Locators.SEARCH_RESULT_TEXT)
+    private WebElement searchResultText;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -96,7 +107,8 @@ public class HomePage {
     }
 
     public void clickOnIconPersonButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(iconPerson)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(iconPerson));
+        actions.moveToElement(iconPerson).click().perform();
     }
 
     private void selectOption(WebElement field, String optionLocator, String value) {
@@ -112,4 +124,22 @@ public class HomePage {
         actions.click(linkDetails).perform();
     }
 
+    public void clickOnIconSearch() {
+        wait.until(ExpectedConditions.elementToBeClickable(iconSearch));
+        actions.moveToElement(iconSearch).click().perform();
+    }
+
+    public void enterSearchInput(String valueOnSearch) {
+        wait.until(ExpectedConditions.elementToBeClickable(searchInput));
+        actions.moveToElement(searchInput).click().sendKeys(searchInput, valueOnSearch).perform();
+    }
+
+    public void clickOnSearchButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+        actions.moveToElement(searchButton).click().perform();
+    }
+
+    public String getSearchResultText() {
+        return searchResultText.getText();
+    }
 }
