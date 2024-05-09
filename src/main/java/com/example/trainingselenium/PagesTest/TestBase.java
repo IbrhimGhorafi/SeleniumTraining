@@ -17,7 +17,7 @@ public class TestBase {
     public static RemoteWebDriver driver = null;
 
     @BeforeSuite
-    public RemoteWebDriver initialize() throws Exception {
+    public static RemoteWebDriver initialize() throws Exception {
         ChromeOptions browserOptions = getChromeOptions();
 
         URL url = new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub");

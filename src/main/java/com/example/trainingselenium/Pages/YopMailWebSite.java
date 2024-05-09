@@ -44,7 +44,6 @@ public class YopMailWebSite {
     }
 
     public void enterEmail(String email) {
-        log.info("Entering email address: " + email);
         wait.until(ExpectedConditions.elementToBeClickable(emailInput));
         actions.moveToElement(emailInput).click().perform();
         actions.sendKeys(emailInput, email).build().perform();

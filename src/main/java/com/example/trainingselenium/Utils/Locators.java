@@ -42,4 +42,8 @@ public class Locators {
     public static final String SEARCH_INPUT = "//div[contains(@class,'searchbox')]//input[contains(@placeholder,'Search')]";
     public static final String SEARCH_BUTTON = "//div[contains(@class,'searchbox')]//button[contains(@class,'search')]";
     public static final String SEARCH_RESULT_TEXT = "//div[contains(@class,'toolbar-tabs ')]//div[contains(text(),'results')]//span";
+    public static final String ADD_TO_BAG_BUTTON = "//div[@data-sku='2002657']//button[contains(@class,'button add-basket')]";
+    public static final String VIEW_BAG_CHECKOUT_BUTTON_IN_POPUP = "//div[contains(@class,'view-cart-button')]//button";
+    public static final String LINK_PRODUCT_PDP = "//div[@data-sku='2002657']//div[contains(@class,'product-title')]//a";
+    public static final String PRODUCT_PRICE_CART = "//div/preceding-sibling::div[text()='Available Now']";
 }

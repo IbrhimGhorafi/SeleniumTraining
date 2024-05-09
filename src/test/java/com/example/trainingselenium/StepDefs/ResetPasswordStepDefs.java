@@ -51,8 +51,9 @@ public class ResetPasswordStepDefs {
     @Then("the user should see a popup message indicating that an email has been sent for resetting the password")
     public void theUserShouldSeeAPopupMessageIndicatingThatAnEmailHasBeenSentForResettingThePassword() {
         String messageReceivedEmailForResetPassword = loginPopup.getMessageReceivedEmail();
-        Assert.assertEquals(messageReceivedEmailForResetPassword,
-                "We've sent password reset instructions to your email. Check your inbox and follow the link.");
+        Assert.assertEquals(
+                "We've sent password reset instructions to your email. Check your inbox and follow the link."
+                , messageReceivedEmailForResetPassword);
         loginPopup.clickOnBackToLoginButton();
         try {
             Thread.sleep(3000);
@@ -87,7 +88,7 @@ public class ResetPasswordStepDefs {
     @And("the user sees a popup confirming that the password has been successfully changed")
     public void theUserSeesAPopupConfirmingThatThePasswordHasBeenSuccessfullyChanged() {
         String messageForPasswordChangedSuccess = resetPasswordPage.getMessageForPasswordChangedSuccess();
-        Assert.assertEquals(messageForPasswordChangedSuccess, "Your password has been reset successfully!");
+        Assert.assertEquals("Your password has been reset successfully!", messageForPasswordChangedSuccess);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

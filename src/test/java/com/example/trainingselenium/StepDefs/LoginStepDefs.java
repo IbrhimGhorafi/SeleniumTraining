@@ -25,7 +25,7 @@ public class LoginStepDefs {
     @Before
     public void setup() throws Exception {
         driver = WebDriverConfiguration.getDriver();
-        log.info("Setup Driver" + driver);
+        log.info("Setup Driver {}", driver);
         PageObjectInitialization pageObjectInitialization = new PageObjectInitialization(driver);
         homePage = pageObjectInitialization.getHomePage();
         loginPopup = pageObjectInitialization.getLoginPopup();
@@ -41,7 +41,7 @@ public class LoginStepDefs {
     @Then("the user is successfully logged in")
     public void theUserIsSuccessfullyLoggedIn() {
         String messageSuccessLoggedIn = loginPopup.getMessageSuccessLoggedIn();
-        Assert.assertEquals(messageSuccessLoggedIn, "You are logged in!");
+        Assert.assertEquals("You are logged in!",messageSuccessLoggedIn );
     }
 
     @And("the user access to the Account page")

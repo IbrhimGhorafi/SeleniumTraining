@@ -31,7 +31,6 @@ public class CookiesPopup {
         actions = new Actions(driver);
     }
 
-
     public void acceptAllCookies() {
         WebElement acceptAllCookiesButton = userCentricRoot.getShadowRoot().findElement(By.cssSelector(Locators.ACCEPT_ALL_COOKIES));
         wait.until(ExpectedConditions.visibilityOf(acceptAllCookiesButton));

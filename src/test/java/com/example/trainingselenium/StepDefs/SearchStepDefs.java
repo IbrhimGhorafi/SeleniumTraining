@@ -17,9 +17,9 @@ public class SearchStepDefs {
     private HomePage homePage;
 
     @Before
-    public void setup() throws Exception {
+    public void setup()  {
         driver = WebDriverConfiguration.getDriver();
-        log.info("Setup Driver" + driver);
+        log.info("Setup Driver {}" , driver);
         PageObjectInitialization pageObjectInitialization = new PageObjectInitialization(driver);
         homePage = pageObjectInitialization.getHomePage();
     }
@@ -38,8 +38,6 @@ public class SearchStepDefs {
     @Then("the value searched should be the same as the value entered {}")
     public void theValueSearchedShouldBeTheSameAsTheValueEnteredCategory(String category) {
         String searchResultText = homePage.getSearchResultText();
-        log.info("Search result text: " + searchResultText);
-        log.info("category : " + category);
         Assert.assertEquals(searchResultText,category);
     }
 }

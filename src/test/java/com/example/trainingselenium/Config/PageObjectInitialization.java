@@ -1,6 +1,7 @@
 package com.example.trainingselenium.Config;
 
 import com.example.trainingselenium.Pages.*;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -10,14 +11,15 @@ import org.openqa.selenium.support.PageFactory;
  * Initialise all Pages
  */
 @Slf4j
+@Getter
 public class PageObjectInitialization {
-    private WebDriver driver;
-    private HomePage homePage;
-    private ChooseCountryAndCurrencyForShoppingPopup chooseCountryAndCurrencyForShoppingPopup;
-    private CookiesPopup cookiesPopup;
-    private LoginPopup loginPopup;
-    private YopMailWebSite yopMailWebSite;
-    private ResetPasswordPage resetPasswordPage;
+    private final WebDriver driver;
+    private final HomePage homePage;
+    private final ChooseCountryAndCurrencyForShoppingPopup chooseCountryAndCurrencyForShoppingPopup;
+    private final CookiesPopup cookiesPopup;
+    private final LoginPopup loginPopup;
+    private final YopMailWebSite yopMailWebSite;
+    private final ResetPasswordPage resetPasswordPage;
 
     public PageObjectInitialization(WebDriver driver) {
         this.driver = driver;
@@ -32,27 +34,4 @@ public class PageObjectInitialization {
         this.resetPasswordPage = PageFactory.initElements(driver, ResetPasswordPage.class);
     }
 
-    public HomePage getHomePage() {
-        return homePage;
-    }
-
-    public ChooseCountryAndCurrencyForShoppingPopup getChooseCountryAndCurrencyForShoppingPopup() {
-        return chooseCountryAndCurrencyForShoppingPopup;
-    }
-
-    public CookiesPopup getCookiesPopup() {
-        return cookiesPopup;
-    }
-
-    public LoginPopup getLoginPopup() {
-        return loginPopup;
-    }
-
-    public YopMailWebSite getYopMailWebSite() {
-        return yopMailWebSite;
-    }
-
-    public ResetPasswordPage getResetPasswordPage() {
-        return resetPasswordPage;
-    }
 }

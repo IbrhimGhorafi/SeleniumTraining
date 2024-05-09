@@ -102,8 +102,7 @@ public class HomePage {
 
     public String messageOfSuccessSubscribe() {
         WebElement successMessage = wait.until(ExpectedConditions.visibilityOf(messageSuccessSubscribe));
-        String message = successMessage.getText();
-        return message;
+        return successMessage.getText();
     }
 
     public void clickOnIconPersonButton() {
@@ -136,7 +135,7 @@ public class HomePage {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            log.error(e.getMessage());
         }
     }
 
@@ -148,8 +147,6 @@ public class HomePage {
     public String getSearchResultText() {
         wait.until(ExpectedConditions.visibilityOf(searchResultText));
         actions.moveToElement(searchResultText).perform();
-
-        log.info("Class.HomePage.Methode.getSearchResultText() " + searchResultText.getText());
         return searchResultText.getText();
     }
 }

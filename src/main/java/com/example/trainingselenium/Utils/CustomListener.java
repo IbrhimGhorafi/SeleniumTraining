@@ -47,11 +47,12 @@ public class CustomListener implements ITestListener {
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        log.warn("[TestNG Listener] Test Failed But With in Success Percentage: {}", result.getName());
     }
 
     @Override
     public void onStart(ITestContext context) {
-        log.info("[TestNG Listener] Test Started: {}", context.getName());
+        log.info("[TestNG Listener]  Started: {}", context.getName());
     }
 
     @Override

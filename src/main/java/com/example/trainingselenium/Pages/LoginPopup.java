@@ -1,6 +1,7 @@
 package com.example.trainingselenium.Pages;
 
 import com.example.trainingselenium.Utils.Locators;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,14 +10,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.time.Duration;
-
+@Slf4j
 public class LoginPopup {
 
-    private static final Logger log = LoggerFactory.getLogger(LoginPopup.class);
     private WebDriver driver;
     private FluentWait<WebDriver> wait;
     private Actions actions;
@@ -92,11 +91,9 @@ public class LoginPopup {
     }
 
     public String getMessageSuccessLoggedIn() {
-        log.info("Message success logged in : " + messageSuccessLoggedIn.getText());
         return messageSuccessLoggedIn.getText();
     }
     public String getMessageReceivedEmail() {
-        log.info("Message received : " + messageReceivedEmail.getText());
         return messageReceivedEmail.getText();
     }
     public void clickOnBackToLoginButton() {
