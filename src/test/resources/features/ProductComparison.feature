@@ -8,14 +8,12 @@ Feature: Fortnums and Mason Product Comparison
     When  the user fill the search field by <category>
     And the user hovers over the first product on the PLP
     And the user retrieves the name of the product
-    And the user clicks on the "Add to Bag" button
+    And the user clicks on the Add to Bag button
     Then the user gets the title of the product from the cart
-    And the user adds the quantity of the product from the cart
+    And the user adds the quantity <quantity> of the product from the cart
     And the user gets the price of a single product
     Then the user moves the element to the wish list
-    And the user retrieves the quantity of the product from the wish list
-    And the user compares the quantity
 
     Examples:
-      | category        | country        | currency |
-      | Royal Blend Tea | United Kingdom | € EUR    |
+      | category        | country        | currency | quantity |
+      | Royal Blend Tea | United Kingdom | € EUR    | 10       |

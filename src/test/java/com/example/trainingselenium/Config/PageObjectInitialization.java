@@ -20,6 +20,9 @@ public class PageObjectInitialization {
     private final LoginPopup loginPopup;
     private final YopMailWebSite yopMailWebSite;
     private final ResetPasswordPage resetPasswordPage;
+    private final PLP plp;
+    private final CartPage cartPage;
+
 
     public PageObjectInitialization(WebDriver driver) {
         this.driver = driver;
@@ -32,6 +35,8 @@ public class PageObjectInitialization {
         this.loginPopup = PageFactory.initElements(driver, LoginPopup.class);
         this.yopMailWebSite = PageFactory.initElements(driver, YopMailWebSite.class);
         this.resetPasswordPage = PageFactory.initElements(driver, ResetPasswordPage.class);
+        this.plp=PageFactory.initElements(driver,PLP.class);
+        this.cartPage=PageFactory.initElements(driver,CartPage.class);
     }
 
 }

@@ -59,6 +59,12 @@ public class HomePage {
     @FindBy(how = How.XPATH, using = Locators.SEARCH_RESULT_TEXT)
     private WebElement searchResultText;
 
+    @FindBy(how = How.XPATH,using = Locators.ICON_WISH_LIST_IN_HEADER)
+    private WebElement iconWishList;
+
+    @FindBy(how = How.XPATH,using = Locators.ICON_BAG_IN_HEADER)
+    private WebElement iconBag;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         wait = new FluentWait<>(driver)
@@ -148,5 +154,15 @@ public class HomePage {
         wait.until(ExpectedConditions.visibilityOf(searchResultText));
         actions.moveToElement(searchResultText).perform();
         return searchResultText.getText();
+    }
+
+    public void clickOnWishListIcon(){
+        wait.until(ExpectedConditions.elementToBeClickable(iconWishList));
+        actions.moveToElement(iconWishList).click().perform();
+    }
+
+    public void clickOnBagIcon(){
+        wait.until(ExpectedConditions.elementToBeClickable(iconBag));
+        actions.moveToElement(iconBag).click().perform();
     }
 }
