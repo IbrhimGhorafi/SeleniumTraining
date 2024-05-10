@@ -9,7 +9,7 @@ import org.testng.annotations.Listeners;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/ProductComparison.feature",
+        features = "src/test/resources/features",
         glue = {"com.example.trainingselenium.StepDefs"},
         plugin = {"pretty", "html:rapport/ReportHTML/reporte.html", "json:rapport/cucumber.json"}
 )
