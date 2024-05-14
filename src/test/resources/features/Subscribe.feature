@@ -12,5 +12,5 @@ Feature: Subscribe
     And the user attemps to subscribe
     Then the user is successfully subscribed
     Examples:
-      | country        | fortnumTopic | product                   | currency | email                        |
-      | United Kingdom | Restaurants  | Fortnum’s Tabletop Trivia | € EUR    | boijautrisas7@yopmail.com |
+      | country        | fortnumTopic | product                   | currency | email                      |
+      | United Kingdom | Restaurants  | Fortnum’s Tabletop Trivia | € EUR    | boijautrisas04@yopmail.com |
